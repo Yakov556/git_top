@@ -1,9 +1,24 @@
 {% extends "base.html" %}
+{% load static %}
     {% block content %}
-<h1>Новое</h1>
-    {% for product in products %}
-<P>{{ product }}</P>
+<h1 style="text-align:center">Новое</h1>
+    <div class="container">
+      <div class="row">
+    {% for product in Prodycts%}
+        <div class="card col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"   >
+          <img src=" {{ product.image.url  }} " class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title" style="text-align:center">{{product.name}}</h5>
+            <p class="card-text"  style="text-align:center">{{product.description}}</p>
+          </div>
+            <p style="text-align:center"> {{product.price}} Р </p>
+          <div class="card-body">
+            <a href="#" class="card-link">Добавить в корзину</a>
+            <a href="#" class="card-link">Подробнее</a>
+          </div>
+        </div>
     {% endfor %}
+          </div>
+          </div>
     {% endblock %}
-
 

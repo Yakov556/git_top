@@ -19,7 +19,7 @@ class Product(models.Model):
     name = models.CharField(max_length=199, db_index=True)
     slug = models.SlugField(max_length=200, db_index=True, unique=True)
     image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
-    description = models.TextField(blank=True)
+    description  = models.TextField(blank=True)
     price = models.DecimalField(decimal_places=2, max_digits=10)
     stock = models.PositiveIntegerField()
     available = models.BooleanField(default=True)
