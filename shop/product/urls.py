@@ -1,6 +1,10 @@
 from django.conf.urls import include, url
-from django.contrib import admin
+from .import views
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
+        url(r'^(?P<id>\d+)/(?P<slug>[-\w]+)/$',
+        views.product_detail,
+        name='product_detail'),
+        url(r'^all/$', views.category, name='category_all' )
+
 ]

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+    {% block content %}
+<h1 style="text-align:center">Категории</h1>
+    <div class="container-category">
+      <div class="row">
+    {% for category in categorys %}
+        <div class="card col-11 col-sm-11 col-md-5 col-lg-2 col-xl-2"   >
+          <div class="card-body">
+            <h5 class="card-title" style="text-align:center">{{category.name}}</h5>
+            <p class="card-text"  style="text-align:center">{{category.description}}</p>
+          </div>
+          <div class="card-body">
+            <a href="#" class="card-link">Товары этой категории</a>
+          </div>
+        </div>
+    {% endfor %}
+          </div>
+          </div>
+    {% endblock %}
+
+
+
