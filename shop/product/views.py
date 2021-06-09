@@ -8,7 +8,8 @@ def product_detail(request, id, slug):
 
 def category(request):
     category = models.Category.objects.all()
-    return render(request, 'product/category.html', {'categorys' : category })
+    products = models.Product.objects.all()
+    return render(request, 'product/category.html', {'categorys' : category, 'product': products  })
 
 # Create your views here.
 
